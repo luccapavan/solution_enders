@@ -71,6 +71,94 @@
 		
 	------------------------------------	
 		
-		\item %2
-		\
-\end{enumerate}
+		\item[2]
+	$y_t=a_0+a_2y_{t-2}+\varepsilon_{t}, \;\; |a_2|<1$
+	
+	\begin{enumerate}
+		
+		\item
+		
+		\begin{enumerate}
+			
+			\item
+			
+			$E_{t-2}y_t=a_0+a_2y_{t-2}$
+			
+			\item
+			
+			$E_{t-1}y_t=a_0+a_2y_{t-2}$
+			
+			\item
+			$E_ty_{t+2}=a_0+a_2y_t$
+			
+			\item
+			
+		\begin{align*}
+			y_t&=a_0+a_2y_{t-2}+\varepsilon_{t}\\
+			&=a_0+a_2a_0+a_2^2y_{t-4}+a_2\varepsilon_{t-2}+\varepsilon_{t}\\
+			&=a_0+a_2a_0+a_2^2a_0+a_2^3y_{t-6}+a_2^2\varepsilon_{t-4}+a_2\varepsilon_{t-2}+\varepsilon_{t}\\
+			&\vdots\\
+			y_t&=\frac{a_0}{1-a_2}+\sum \limits_{\substack{i=0\\
+					j=2i}}^{\infty}a_2^i\varepsilon_{t-j}+Aa_2^t
+		\end{align*}
+	Portanto a solução particular para $\{y_t\}$ fica: 
+	\begin{align*}
+		y_t^p&=\frac{a_0}{1-a_2}+\sum \limits_{\substack{i=0\\
+				j=2i}}^{\infty}a_2^i\varepsilon_{t-j}\\
+			&=\frac{a_0}{1-a_2}+\varepsilon_t+a_2\varepsilon_{t-2}+a_2^2\varepsilon_{t-4}+a_2^3\varepsilon_{t-6}+\cdots
+		\end{align*}
+	
+	\begin{align*}
+		\text{cov}(y_t,y_{t-1})&=E(y_t-Ey_t)(y_{t-1}-Ey_{t-1})\\
+		\\
+		Ey_t=Ey_{t-1}&=\frac{a_0}{1-a_2}\therefore\\
+			\text{cov}(y_t,y_{t-1})&=E[(\varepsilon_t+a_2\varepsilon_{t-2}+a_2^2\varepsilon_{t-4}+a_2^3\varepsilon_{t-6}+\cdots)\\
+			\;\;&\times(\varepsilon_{-1}+a_2\varepsilon_{t-3}+a_2^2\varepsilon_{t-5}+a_2^3\varepsilon_{t-7}+\cdots)]\\
+			&=0\\
+			\Rightarrow \rho_1&=0 \therefore \phi_{11}=0
+	\end{align*}
+
+	Para encontrar $\phi_{22}$ precisamos de $\rho_2$, portanto de $\gamma_0$ e $\gamma_2$.
+	
+	\begin{align*}
+		\gamma_0=E(y_t-Ey_t)^2&=E[(\varepsilon_t+a_2\varepsilon_{t-2}+a_2^2\varepsilon_{t-4}+a_2^3\varepsilon_{t-6}+\cdots)\\
+		&\;\;\times(\varepsilon_t+a_2\varepsilon_{t-2}+a_2^2\varepsilon_{t-4}+a_2^3\varepsilon_{t-6}+\cdots)]\\
+		&=\frac{\sigma^2}{1-a_2^2}\\
+		\\
+		\gamma_2=E(y_t-Ey_t)(y_{t-2}-Ey_{t-2})&=E[(+\varepsilon_t+a_2\varepsilon_{t-2}+a_2^2\varepsilon_{t-4}+a_2^3\varepsilon_{t-6}+\cdots)\\
+		&\;\;\times(+\varepsilon_{t-2}+a_2\varepsilon_{t-4}+a_2^2\varepsilon_{t-6}+a_2^3\varepsilon_{t-8}+\cdots)]\\
+		&=\frac{a_2\sigma^2}{1-a_2^2}\therefore\\
+		\rho_2&=\frac{\gamma_2}{\gamma_0}=a_2\\
+		\\
+		\phi_{22}&=\frac{\rho_2-\rho_1^2}{1-\rho_1^2}=a_2
+	\end{align*}
+
+		\end{enumerate}
+	
+	\item %2b
+	
+	$$y_t=\frac{a_0}{1-a_2}+\sum \limits_{\substack{i=0\\	j=2i}}^{\infty}a_2^i\varepsilon_{t-j}+Aa_2^t$$
+		
+		Função impulso resposta: 			
+		\begin{align*}
+			\frac{\partial y_t}{\partial\varepsilon_{t-1}}&=0\\
+			\frac{\partial y_t}{\partial\varepsilon_{t-2}}&=a_2\\
+			\frac{\partial y_t}{\partial\varepsilon_{t-3}}&=0\\
+			\frac{\partial y_t}{\partial\varepsilon_{t-4}}&=a_2^2\\
+			&\vdots\\
+			\frac{\partial y_t}{\partial\varepsilon_{t-j}}&=a_2^{i},\;\;\; i=1,2,...,\;\;j=2i.
+		\end{align*}
+	
+Efeito de $\varepsilon_t$ sobre $\{y_t\}$:
+\begin{align*}
+\frac{\partial y_t}{\partial\varepsilon_{t}}&=1\\
+&\vdots\\
+\frac{\partial y_{t+j}}{\partial\varepsilon_{t}}&=a_2^{i},\;\;\; i=1,2,...,\;\;j=2i.
+\end{align*}
+	
+	
+	\end{enumerate}
+		
+		
+	
+	\end{enumerate}
